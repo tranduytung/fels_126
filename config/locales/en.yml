@@ -32,8 +32,18 @@ en:
 
   form_error: "The form contains "
   sign_up: "Sign up"
+  log_in: "Log in"
+  log_out: "Log out"
+  user: "Users"
+  profile: "Profile"
+  edit_user: "Edit user"
+  account: "Account"
   create_my_account: "Create my account"
+  sign_up_now: "Sign up now!"
+  remember_me: "Remember me on this computer"
 
   picture_size: "should be less than 5MB"
   message:
     wellcome_to: "Welcome to the Project 1 WebSite"
+    please_log_in: "Please log in."
+    invalid_email_password: "Invalid email/password combination"
