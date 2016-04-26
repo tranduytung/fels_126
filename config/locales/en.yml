@@ -41,9 +41,12 @@ en:
   create_my_account: "Create my account"
   sign_up_now: "Sign up now!"
   remember_me: "Remember me on this computer"
+  update_your_profile: "Update your profile"
+  save_change: "Save changes"
 
   picture_size: "should be less than 5MB"
   message:
     wellcome_to: "Welcome to the Project 1 WebSite"
     please_log_in: "Please log in."
     invalid_email_password: "Invalid email/password combination"
+    update_profile: "Update profile"
