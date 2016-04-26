@@ -22,4 +22,11 @@ class User < ActiveRecord::Base
   validate :picture_size
 
   has_secure_password
+
+  private
+  def picture_size
+    if picture.size > 5.megabytes
+      errors.add :picture, t(:picture_size)
+    end
+  end
 end
