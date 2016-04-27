@@ -44,6 +44,11 @@ en:
   update_your_profile: "Update your profile"
   save_change: "Save changes"
   all_user: "All users"
+  view_my_profile: "view my profile"
+  following: "Following"
+  followers: "Followers"
+  follow: "Follow"
+  unfollow: "Unfollow"
 
   picture_size: "should be less than 5MB"
   message:
