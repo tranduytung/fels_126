@@ -271,3 +271,21 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+/* Categories index */
+.categories {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+/* Gradient color1 - color2 - color1 */
+
+hr.style-one {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}

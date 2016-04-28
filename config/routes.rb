@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
 
   resources :relationships, only: [:create, :destroy]
+  resources :categories, only: [:index, :show]
 
   resources :users do
     resources :followers, only: [:index]
