@@ -49,6 +49,11 @@ en:
   followers: "Followers"
   follow: "Follow"
   unfollow: "Unfollow"
+  category: "Category"
+  all_categories: "All Categories"
+  start: "Start"
+  see_more: "See more"
+  list_word: "List Word"
 
   picture_size: "should be less than 5MB"
   message:
