@@ -289,3 +289,14 @@ hr.style-one {
   background: #333;
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
+
+/* Words index */
+.words {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}

@@ -3,4 +3,8 @@ class Word < ActiveRecord::Base
   has_many :answers, dependent: :destroy
   
   validates :content, presence: true, length: {maximum: 150}
+
+  def correct_answer
+    answers.find_by word_id: id ,is_correct: true
+  end
 end

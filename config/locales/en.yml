@@ -24,7 +24,7 @@ en:
   base_title: "Project 1 - Framgia"
   logo: "Project 1"
   home: "Home"
-  help: "help"
+  help: "Help"
   about: "About"
   contact: "Contact"
   develop_by: "The Develop by Tung"
@@ -54,6 +54,8 @@ en:
   start: "Start"
   see_more: "See more"
   list_word: "List Word"
+  word: "Word"
+  all_words: "All Words"
 
   picture_size: "should be less than 5MB"
   message:
