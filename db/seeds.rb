@@ -29,3 +29,17 @@ followers.each {|follower| follower.follow(user)}
   content = Faker::Lorem.sentence
   category = Category.create! name: name, content: content
 end
+
+cate = Category.order(:created_at)
+cate.each { |cate|
+  50.times do
+    word = cate.words.build content: Faker::Lorem.characters(5)
+    word.answers = [
+      Answer.new(content: Faker::Lorem.characters(5), is_correct: true),
+      Answer.new(content: Faker::Lorem.characters(5), is_correct: false),
+      Answer.new(content: Faker::Lorem.characters(5), is_correct: false),
+      Answer.new(content: Faker::Lorem.characters(5), is_correct: false)
+    ].shuffle
+    word.save!
+  end
+}
