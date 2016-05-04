@@ -21,4 +21,9 @@ Rails.application.routes.draw do
     resources :followers, only: [:index]
     resources :followings, only: [:index]
   end
+
+  namespace :admin do
+    root "categories#index"
+    resources :categories, only: [:new, :create, :index]
+  end
 end
