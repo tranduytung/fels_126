@@ -56,6 +56,7 @@ en:
   list_word: "List Word"
   word: "Word"
   all_words: "All Words"
+  delete: "Delete"
 
   picture_size: "should be less than 5MB"
   message:
@@ -63,3 +64,4 @@ en:
     please_log_in: "Please log in."
     invalid_email_password: "Invalid email/password combination"
     update_profile: "Update profile"
+    user_deleted: "Delete user successful"
