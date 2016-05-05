@@ -57,6 +57,10 @@ en:
   word: "Word"
   all_words: "All Words"
   delete: "Delete"
+  new_category: "New Category"
+  create_new_category: "Create new Category"
+  manage_categories: "Manage Categories"
+  edit: "Edit"
 
   picture_size: "should be less than 5MB"
   message:
@@ -65,3 +69,5 @@ en:
     invalid_email_password: "Invalid email/password combination"
     update_profile: "Update profile"
     user_deleted: "Delete user successful"
+    new_category_successful: "Create new Category successful"
+    you_are_not_admin: "You are not admin"
