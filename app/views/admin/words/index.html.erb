@@ -1,0 +1,8 @@
+<%= provide :title, t(:all_words)%>
+<h1><%= t :all_words %></h1>
+<ul class="words">
+  <% if @words.any? %>
+    <%= render @words %>
+  <% end %>
+</ul>
+<%= will_paginate %>

@@ -1,0 +1,17 @@
+<div class="row well">
+  <div class="col-md-5">
+    <%= word.content %>
+  </div>
+  <div class="col-md-5">
+    <%= word.correct_answer.content %>
+  </div>
+  <div class="col-md-2">
+    <%= link_to "#", class: "btn btn-info" do %>
+      <span><%= t :edit %></span>
+    <% end %>
+    <%= link_to "#", method: :delete,
+      data: {confirm: t("warning.delete")}, class: "btn btn-info" do %>
+      <span><%= t :delete %></span>
+    <% end %>
+  </div>
+</div>

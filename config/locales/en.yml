@@ -56,6 +56,7 @@ en:
   list_word: "List Word"
   word: "Word"
   all_words: "All Words"
+  manage_words: "Manage Words"
   delete: "Delete"
   new_category: "New Category"
   create_new_category: "Create new Category"
