@@ -36,12 +36,6 @@ class UsersController < ApplicationController
       render "edit"
     end
   end
-
-  def destroy
-    @user.destroy
-    flash[:success] = t "message.user_deleted"
-    redirect_to users_path
-  end
   
   private
 

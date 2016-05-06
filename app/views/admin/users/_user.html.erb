@@ -2,7 +2,9 @@
   <%= gravatar_for user %>
   <%= link_to user.name, user %>
   <% unless current_user?(user) %>
-    <%= link_to t(:delete), user, method: :delete,
-      data: {confirm: t("warning.delete")} %>
+    <%= link_to admin_user_path(user), method: :delete,
+      data: {confirm: t("warning.delete")} do %>
+      <span><%= t :delete %></span>
+    <% end %>
   <% end %>
 </li>
