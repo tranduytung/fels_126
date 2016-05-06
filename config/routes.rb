@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "users#index"
-    resources :categories, only: [:new, :create, :index]
+    resources :categories, only: [:new, :create, :index, :edit, :update]
     resources :users, only: [:index, :destroy]
   end
 end
