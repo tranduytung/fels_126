@@ -5,4 +5,8 @@
     class: "btn btn-info" do %>
     <span><%= t :edit %></span>
   <% end %>
+  <%= link_to admin_category_path(category), method: :delete,
+      data: {confirm: t("warning.delete")}, class: "btn btn-info" do %>
+      <span><%= t :delete %></span>
+    <% end %>
 </li>

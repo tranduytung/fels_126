@@ -1,6 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   before_action :require_admin
-  before_action :find_caregory, only: [:edit, :update]
+  before_action :find_caregory, only: [:edit, :update, :destroy]
 
   def index
     @categories = Category.paginate page: params[:page], per_page: 20
@@ -30,6 +30,12 @@ class Admin::CategoriesController < ApplicationController
     else
       render "edit"
     end
+  end
+
+  def destroy
+    @category.destroy
+    flash[:success] = t "message.category_deleted"
+    redirect_to admin_categories_path
   end
 
   private

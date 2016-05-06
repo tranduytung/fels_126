@@ -77,6 +77,7 @@ en:
     new_category_successful: "Create new Category successful"
     you_are_not_admin: "You are not admin"
     update_category_successful: "Update Category successful"
+    category_deleted: "Delete category successful"
 
   warning:
     delete: "You Sure ?"
