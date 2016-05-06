@@ -61,6 +61,9 @@ en:
   create_new_category: "Create new Category"
   manage_categories: "Manage Categories"
   edit: "Edit"
+  all_users: "All Users"
+  manage_users: "Manage Users"
+  
 
   picture_size: "should be less than 5MB"
   message:
@@ -71,3 +74,6 @@ en:
     user_deleted: "Delete user successful"
     new_category_successful: "Create new Category successful"
     you_are_not_admin: "You are not admin"
+
+  warning:
+    delete: "You Sure ?"

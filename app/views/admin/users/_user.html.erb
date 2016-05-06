@@ -1,0 +1,8 @@
+<li>
+  <%= gravatar_for user %>
+  <%= link_to user.name, user %>
+  <% unless current_user?(user) %>
+    <%= link_to t(:delete), user, method: :delete,
+      data: {confirm: t("warning.delete")} %>
+  <% end %>
+</li>
