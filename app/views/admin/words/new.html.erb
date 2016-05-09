@@ -1,0 +1,26 @@
+<% provide :title, t(:new_word) %>
+<h1><%= t :new_word %></h1>
+<%= nested_form_for [:admin, @category, @word] do |f| %>
+  <%= render "shared/error_messages" , object: f.object %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content, class: "form-control" %>
+
+  <%= f.label :answers %>
+  <%= f.fields_for :answers do |answer_form| %>
+
+    <%= answer_form.label :is_correct, class: "checkbox inline" do %>
+      <%= answer_form.check_box :is_correct %>
+      <span><%= t :correct %></span>
+    <% end %>
+
+    <%= answer_form.label :content_answer %>
+    <%= answer_form.text_field :content %>
+    <%= answer_form.link_to_remove "Remove this task" %>
+    
+  <% end %>
+  <p><%= f.link_to_add t(:add_a_task), :answers %></p>
+
+  <%= f.submit t(:create_new_word), class: "btn btn-primary" %>
+
+<% end %>

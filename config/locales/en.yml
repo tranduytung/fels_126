@@ -66,6 +66,10 @@ en:
   edit: "Edit"
   all_users: "All Users"
   manage_users: "Manage Users"
+  new_word: "New Word"
+  create_new_word: "Create new Word"
+  correct: "Correct"
+  add_a_task: "Add answer"
   
 
   picture_size: "should be less than 5MB"
@@ -79,6 +83,8 @@ en:
     you_are_not_admin: "You are not admin"
     update_category_successful: "Update Category successful"
     category_deleted: "Delete category successful"
+    new_word_successful: "Create new word successful"
+    should_have_a_correct_answer: "Should have a correct answer. Retry"
 
   warning:
     delete: "You Sure ?"
