@@ -26,5 +26,6 @@ Rails.application.routes.draw do
     root "users#index"
     resources :categories, only: [:new, :create, :index, :edit, :update, :destroy]
     resources :users, only: [:index, :destroy]
+    resources :words, only: [:index]
   end
 end
