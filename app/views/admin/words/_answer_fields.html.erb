@@ -1,0 +1,11 @@
+<div class="input-group fields">
+  <span class="input-group-addon">
+    <%= f.check_box :is_correct, class: "answer_field" %>
+  </span>
+
+  <span><%= f.text_field :content, class: "form-control"  %></span>
+
+  <span class="input-group-addon">
+    <%= link_to_remove_fields t(:remove), f %>
+  </span>
+</div>
