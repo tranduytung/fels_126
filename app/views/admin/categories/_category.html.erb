@@ -1,6 +1,10 @@
 <li>
   <h3><%= link_to category.name, category %></h3>
   <span><%= category.content%></span>
+  <%= link_to new_admin_category_word_path(category),
+    class: "btn btn-info" do %>
+    <span><%= t :new_word %></span>
+  <% end %>
   <%= link_to edit_admin_category_path(category),
     class: "btn btn-info" do %>
     <span><%= t :edit %></span>
