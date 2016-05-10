@@ -71,6 +71,8 @@ en:
   correct: "Correct"
   add_a_task: "Add answer"
   remove_answer: "Remove answer"
+  edit_word: "Edit Word"
+  update_word: "Update Word"
   
   picture_size: "should be less than 5MB"
 
@@ -87,6 +89,8 @@ en:
     new_word_successful: "Create new word successful"
     should_have_a_correct_answer: "Should have a correct answer. Retry"
     check_count_ansewer: "Should have 1 to 4 answer"
+    update_word_successful: "Update Word successful"
+    update_word_unsuccessful: "Update Word unsuccessful"
 
   warning:
     delete: "You Sure ?"

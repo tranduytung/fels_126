@@ -1,0 +1,17 @@
+<% provide :title, t(:edit_word) %>
+<h1><%= t :edit_word %></h1>
+<%= form_for [:admin, @word] do |f| %>
+  <%= render "shared/error_messages" , object: f.object %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content, class: "form-control" %>
+
+  <%= f.label :answers %>
+  <%= f.fields_for :answers do |answer_form| %>
+    <%= render "answer_fields", f: answer_form %>
+  <% end %>
+  <p><%= link_to_add_fields t(:add_a_task), f, :answers %></p>
+
+  <%= f.submit t(:update_word), class: "btn btn-primary" %>
+
+<% end %>
