@@ -2,3 +2,7 @@
 <h2><%= @category.name %></h2>
 <div class="well"><%= @category.content %></div>
 <h2><%= t :list_word %></h2>
+<% if @words.any? %>
+  <%= render @words %>
+<% end %>
+<%= will_paginate @words %>
