@@ -6,7 +6,7 @@
     <%= word.correct_answer.content %>
   </div>
   <div class="col-md-2">
-    <%= link_to "#", class: "btn btn-info" do %>
+    <%= link_to edit_admin_word_path(word), class: "btn btn-info" do %>
       <span><%= t :edit %></span>
     <% end %>
     <%= link_to "#", method: :delete,

@@ -1,6 +1,7 @@
 class Admin::WordsController < ApplicationController
   before_action :require_admin
   before_action :find_category, only: [:new, :create]
+  before_action :find_word, only: [:edit, :update]
 
   def index
     @words = Word.paginate page: params[:page], per_page: 20
@@ -20,14 +21,30 @@ class Admin::WordsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @word.update_attributes word_params
+      flash[:success] = t "message.update_word_successful"
+      redirect_to [:admin, :words]
+    else
+      render "edit"
+    end
+  end
+
   private
 
   def word_params
     params.require(:word).permit :content,
-      answers_attributes: [:content, :is_correct, :_destroy]
+      answers_attributes: [:id, :content, :is_correct, :_destroy]
   end
 
   def find_category
     @category = Category.find params[:category_id]
+  end
+
+  def find_word
+    @word = Word.find params[:id]
   end
 end
