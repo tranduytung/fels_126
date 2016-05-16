@@ -1,7 +1,7 @@
 class Admin::WordsController < ApplicationController
   before_action :require_admin
   before_action :find_category, only: [:new, :create]
-  before_action :find_word, only: [:edit, :update]
+  before_action :find_word, only: [:edit, :update, :destroy]
 
   def index
     @words = Word.paginate page: params[:page], per_page: 20
@@ -30,6 +30,16 @@ class Admin::WordsController < ApplicationController
       redirect_to [:admin, :words]
     else
       render "edit"
+    end
+  end
+
+  def destroy
+    if @word.destroy
+      flash[:success] = t "message.delete_word_success"
+      redirect_to [:admin, :words]
+    else
+      flash[:danger] = t "message.delete_word_unsuccess"
+      redirect_to [:admin, :words]
     end
   end
 
