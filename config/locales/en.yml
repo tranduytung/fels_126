@@ -91,6 +91,7 @@ en:
     check_count_ansewer: "Should have 1 to 4 answer"
     update_word_successful: "Update Word successful"
     update_word_unsuccessful: "Update Word unsuccessful"
+    delete_word_success: "Delete word successful"
 
   warning:
     delete: "You Sure ?"

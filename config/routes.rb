@@ -29,6 +29,6 @@ Rails.application.routes.draw do
       resources :words, only: [:new, :create]
     end
     resources :users, only: [:index, :destroy]
-    resources :words, only: [:index, :edit, :update]
+    resources :words, only: [:index, :edit, :update, :destroy]
   end
 end
