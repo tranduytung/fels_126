@@ -3,7 +3,10 @@ class Word < ActiveRecord::Base
   has_many :answers, dependent: :destroy
   accepts_nested_attributes_for :answers, allow_destroy: true
   before_save :check_correct_answers, :check_answers_count
-  
+  scope :not_lerned, ->user_id{where "id NOT IN (SELECT word_id FROM results
+    WHERE lesson_id IN (SELECT id FROM lessons WHERE user_id = ?))", user_id}
+  scope :random, ->{order"RANDOM()"}
+
   validates :content, presence: true, length: {maximum: 150}
 
   def correct_answer
