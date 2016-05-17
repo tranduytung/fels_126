@@ -73,6 +73,10 @@ en:
   remove_answer: "Remove answer"
   edit_word: "Edit Word"
   update_word: "Update Word"
+  start_lesson: "Start Lesson"
+  list_lesson: "List Lesson"
+  category_has_not_lessons: "Category has'nt any lesson"
+  submit: "Sunmit"
   
   picture_size: "should be less than 5MB"
 
@@ -92,6 +96,12 @@ en:
     update_word_successful: "Update Word successful"
     update_word_unsuccessful: "Update Word unsuccessful"
     delete_word_success: "Delete word successful"
+    new_lesson_successful: "Create Lesson successful"
+    new_lesson_unsuccessful: "Create Lesson fail"
+    error_no_word: "Error. Category has'nt any words "
+    error: "Error"
+    please_log_in_to_see_it: "Please login to see it"
+    not_enough_word: "Category not enough words"
 
   warning:
     delete: "You Sure ?"

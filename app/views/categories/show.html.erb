@@ -1,6 +1,28 @@
 <% provide :title, @category.name %>
 <h2><%= @category.name %></h2>
 <div class="well"><%= @category.content %></div>
+<h2><%= t :list_lesson %></h2>
+<% if current_user.nil? %>
+  <p><%= t "message.please_log_in_to_see_it" %></p>
+<% else %>
+  <%= link_to category_lessons_path(@category), method: :post,
+    class: "btn btn-info" do %>
+    <span><%= t :start_lesson %></span>
+  <% end %>
+  
+  <% if @lessons.empty? %>
+    <p><%= t :category_has_not_lessons %></p>
+  <% else %>
+    <table class="table table-hover">
+      <tr>
+        <th><%= t :lesson_name %></th>
+        <th><%= t :status %></th>
+        <th></th>
+      </tr>
+      <%= render @lessons %>
+    </table>
+  <% end %>
+<% end %>
 <h2><%= t :list_word %></h2>
 <% if @words.any? %>
   <%= render @words %>
