@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <%= f.object.word.content %>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <% f.object.word.answers.each do |answer| %>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :answer_id, answer.id,
+            disabled: true %>
+          <% if answer.is_correct? %>
+            <span class="list-group-item-success">
+              <%= f.object.answer.content %>
+            </span>
+          <% elsif f.object.answer == answer %>
+            <span class="list-group-item-danger">
+              <%= answer.content %>
+            </span>
+          <% else %>
+            <span>
+              <%= answer.content %>
+            </span>
+          <% end %>
+        </label>
+      </div>
+    <% end %>
+  </div>
+</div>
