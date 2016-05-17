@@ -20,8 +20,8 @@ class LessonsController < ApplicationController
 
   def update
     @lesson.update_attributes lesson_params
-    flash[:success] = t "message.update_word_successful"
-    redirect_to @lesson
+    flash[:success] = t "message.update_lesson_successful"
+    redirect_to lesson_results_path @lesson
   end
 
   private

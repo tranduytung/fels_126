@@ -8,6 +8,11 @@ class Lesson < ActiveRecord::Base
   validate :check_words_size
   before_create :create_words
 
+  def point
+    self.results.select{|result|
+      result.answer.present? && result.answer.is_correct}.size
+  end
+
   private
   def create_words
     self.words = self.category.words.order("RANDOM()")

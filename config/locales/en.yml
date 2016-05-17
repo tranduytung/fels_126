@@ -102,6 +102,9 @@ en:
     error: "Error"
     please_log_in_to_see_it: "Please login to see it"
     not_enough_word: "Category not enough words"
+    lesson_not_learned: "You have'nt learnt this lesson"
+    update_lesson_successful: "Update Lesson successful"
+    you_can_see_it: "You can see it"
 
   warning:
     delete: "You Sure ?"
