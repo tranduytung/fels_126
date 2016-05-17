@@ -43,3 +43,17 @@ cate.each { |cate|
     word.save!
   end
 }
+
+category_new = Category.create!(
+  name: "N3",
+  content: "De thi N3")
+5.times do
+word_new = category_new.words.build content: Faker::Lorem.characters(5)
+    word_new.answers = [
+      Answer.new(content: Faker::Lorem.characters(5), is_correct: true),
+      Answer.new(content: Faker::Lorem.characters(5), is_correct: false),
+      Answer.new(content: Faker::Lorem.characters(5), is_correct: false),
+      Answer.new(content: Faker::Lorem.characters(5), is_correct: false)
+    ].shuffle
+    word_new.save!
+end

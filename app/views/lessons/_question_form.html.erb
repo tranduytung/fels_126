@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <%= f.object.word.content %>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <% f.object.word.answers.each do |answer| %>
+      <div class="radio">
+        <label>
+          <%= f.radio_button :answer_id, answer.id %>
+          <%= answer.content %>
+        </label>
+      </div>
+    <% end %>
+  </div>
+</div>
