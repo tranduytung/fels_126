@@ -1,8 +1,8 @@
 class LessonsController < ApplicationController
   before_action :logged_in_user
-  before_action :find_lesson, only: [:show, :update, :check_user]
+  before_action :find_lesson, only: [:show, :update, :check_user, :destroy]
   before_action :find_category, only: [:create]
-  before_action :check_user, only: [:show, :update]
+  before_action :check_user, only: [:show, :update, :destroy]
 
   def show
   end
@@ -22,6 +22,16 @@ class LessonsController < ApplicationController
     @lesson.update_attributes lesson_params
     flash[:success] = t "message.update_lesson_successful"
     redirect_to lesson_results_path @lesson
+  end
+
+  def destroy
+    @category = @lesson.category
+    if @lesson.destroy
+      flash[:success] = t "message.delete_lesson_successful"
+    else
+      flash[:danger] = t "message.delete_lesson_unsuccessful"
+    end
+    redirect_to @category
   end
 
   private

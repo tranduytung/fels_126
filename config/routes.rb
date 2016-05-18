@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :lessons, only: [:create, :update]
   end
   resources :words, only: [:index]
-  resources :lessons, only: [:show, :update] do
+  resources :lessons, only: [:show, :update, :destroy] do
     resources :results, only: [:index]
   end
 
