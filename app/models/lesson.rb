@@ -15,12 +15,12 @@ class Lesson < ActiveRecord::Base
 
   private
   def create_words
-    self.words = self.category.words.order("RANDOM()")
+    self.words = self.category.words.not_lerned(self.user).random
       .limit Settings.lesson.limit_words
   end
 
   def check_words_size
-    @words = self.category.words
+    @words = self.category.words.not_lerned self.user
     if @words.size < Settings.lesson.limit_words
       errors.add :base, I18n.t("message.not_enough_word")
     end
