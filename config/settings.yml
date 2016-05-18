@@ -1,2 +1,7 @@
 lesson:
   limit_words: 10
+words:
+  filter_type:
+    all_word: "all_word"
+    learned: "learned"
+    not_learned: "not_learned"
