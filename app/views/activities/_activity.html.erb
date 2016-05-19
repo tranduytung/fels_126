@@ -1,0 +1,22 @@
+<tr>
+  <td>
+    <%= activity.id %>
+  </td>
+  <td>
+    <% if current_user? activity.user  %>
+      <%= t :you %>
+    <% else %>
+      <%= link_to activity.user.name, activity.user %>
+    <% end %>
+    <%= activity.action %>
+    <% if current_user? activity.object  %>
+      <%= t :you %>
+    <% else %>
+      <%= link_to activity.object.name, activity.object %>
+    <% end %>
+  </td>
+  <td>
+    <%= time_ago_in_words activity.created_at %>
+    <%= t :ago %>
+  </td>
+</tr>

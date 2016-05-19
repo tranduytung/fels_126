@@ -13,14 +13,18 @@ class Lesson < ActiveRecord::Base
       result.answer.present? && result.answer.is_correct}.size
   end
 
+  def name
+    self.id
+  end
+
   private
   def create_words
-    self.words = self.category.words.not_lerned(self.user).random
+    self.words = self.category.words.not_learned(self.user).random
       .limit Settings.lesson.limit_words
   end
 
   def check_words_size
-    @words = self.category.words.not_lerned self.user
+    @words = self.category.words.not_learned self.user
     if @words.size < Settings.lesson.limit_words
       errors.add :base, I18n.t("message.not_enough_word")
     end

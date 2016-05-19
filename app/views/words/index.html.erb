@@ -1,8 +1,40 @@
 <%= provide :title, t(:all_words)%>
 <h1><%= t :all_words %></h1>
-<ul class="words">
-  <% if @words.any? %>
-    <%= render @words %>
+<%= form_for words_path, method: :get do |f| %>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-1">
+      <%= select_tag :category_id, options_from_collection_for_select(@categories,
+        :id, :name, params[:category_id]), include_blank: t(:all_category) %>
+    </div>
+    <div class="row col-md-5">
+      <% Settings.words.filter_type.each do |key, type| %>
+        <div class="col-md-4">
+          <label>
+            <%= radio_button_tag :type, type,
+              (checked = true if params[:type] == type) %>
+            <%= t "#{type}" %>
+          </label>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="center">
+    <%= submit_tag t(:filter), class: "btn btn-primary" %>
+  </div>
+<% end %>
+<div class="center">
+  <h3>
+    <%= t :total_word %>
+    <%= @words.size %>
+  </h3>
+  <% if @words_display.any? %>
+    <table class="table table-hover">
+      <tr>
+        <th><%= t :Word %></th>
+        <th><%= t :Answer %></th>
+      </tr>
+      <%= render @words_display %>
+    </table>
   <% end %>
-</ul>
-<%= will_paginate %>
+</div>
+<%= will_paginate @words_display %>

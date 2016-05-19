@@ -1,2 +1,15 @@
 lesson:
   limit_words: 10
+words:
+  filter_type:
+    all_word: "all_word"
+    learned: "learned"
+    not_learned: "not_learned"
+activity:
+  objects:
+    user: "user"
+    lesson: "lesson"
+  actions:
+    learned_lesson: 0
+    follow: 1
+    unfollow: -1

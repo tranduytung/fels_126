@@ -59,6 +59,11 @@ class User < ActiveRecord::Base
     following.include? other_user
   end
 
+  def create_activity action_type, object, type
+    Activity.create! action_type: action_type, user_id: self.id, 
+      object_id: object.id, object_type: type
+  end
+
   private
   def picture_size
     if picture.size > 5.megabytes

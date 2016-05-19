@@ -20,6 +20,8 @@ class LessonsController < ApplicationController
 
   def update
     @lesson.update_attributes lesson_params
+    current_user.create_activity Settings.activity.actions.learned_lesson, @lesson,
+      Settings.activity.objects.lesson
     flash[:success] = t "message.update_lesson_successful"
     redirect_to lesson_results_path @lesson
   end

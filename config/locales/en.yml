@@ -66,6 +66,7 @@ en:
   edit: "Edit"
   all_users: "All Users"
   manage_users: "Manage Users"
+  user: "user"
   new_word: "New Word"
   create_new_word: "Create new Word"
   correct: "Correct"
@@ -76,7 +77,16 @@ en:
   start_lesson: "Start Lesson"
   list_lesson: "List Lesson"
   category_has_not_lessons: "Category has'nt any lesson"
+  lesson: "lesson"
   submit: "Sunmit"
+  filter: "Filter"
+  all: "All"
+  total_word: "Total Words: "
+  all_activity: "All Activity"
+  action_content: "Action"
+  stt: "STT"
+  you: "You"
+  ago: "ago"
   
   picture_size: "should be less than 5MB"
 
@@ -108,3 +118,8 @@ en:
 
   warning:
     delete: "You Sure ?"
+  action:
+    follow: "follow"
+    unfollow: "unfollow"
+    learned_lesson: "learned lesson"
+  
