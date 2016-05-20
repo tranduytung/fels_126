@@ -1,0 +1,5 @@
+<% if current_user? activity.user %>
+  <%= t :you %>
+<% else %>
+  <%= link_to find_user(activity.user).name, activity.user %>
+<% end %>

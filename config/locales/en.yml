@@ -80,6 +80,10 @@ en:
   filter: "Filter"
   all: "All"
   total_word: "Total Words: "
+  action_content: "Action"
+  stt: "STT"
+  you: "You"
+  ago: "ago"
   
   picture_size: "should be less than 5MB"
 
@@ -111,3 +115,7 @@ en:
 
   warning:
     delete: "You Sure ?"
+  activity:
+    follow: "follow"
+    unfollow: "unfollow"
+    learned_lesson: "learned lesson"
