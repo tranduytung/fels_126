@@ -3,7 +3,8 @@ class Admin::CategoriesController < ApplicationController
   before_action :find_caregory, only: [:edit, :update, :destroy]
 
   def index
-    @categories = Category.paginate page: params[:page], per_page: 20
+    @categories = Category.paginate page: params[:page],
+      per_page: Settings.paginate.categories
   end
 
   def new

@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <%= activity.id %>
+    <%= gravatar_for find_user activity.user %>
   </td>
   <td>
     <%= render "shared/user_activity", activity: activity %>
@@ -11,9 +11,10 @@
       <%= t "activity.unfollow" %>
       <%= render "shared/object_activity", activity: activity %>
     <% elsif activity.learned_lesson? %>
-      <%= t "activity.learned_lesson" %>
-      <%= link_to find_lesson(activity.object_id).id,
-        find_lesson(activity.object_id) %>
+      <%= t :learned_lesson_activities,
+        words_number: (find_lesson activity.object_id).words.size %>
+      <%= link_to find_lesson(activity.object_id).category.name,
+        find_lesson(activity.object_id).category %>
     <% end %>
   </td>
   <td>

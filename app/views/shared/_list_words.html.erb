@@ -1,0 +1,12 @@
+<div class="center">
+  <% if @words.any? %>
+    <table class="table table-hover">
+      <tr>
+        <th><%= t :Word %></th>
+        <th><%= t :Answer %></th>
+      </tr>
+      <%= render @words %>
+    </table>
+  <% end %>
+  <%= will_paginate @words %>
+</div>

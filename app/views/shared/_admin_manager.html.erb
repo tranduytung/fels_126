@@ -1,0 +1,20 @@
+<ul class="list-group">
+  <li class="list-group-item list-group-item-info">
+    <%= t :manager %>
+  </li>
+  <%= link_to admin_users_path do %>
+    <li class="list-group-item">
+      <%= t :users %>
+    </li>
+  <% end %>
+  <%= link_to admin_categories_path do %>
+    <li class="list-group-item">
+      <%= t :categories %>
+    </li>
+  <% end %>
+  <%= link_to admin_words_path do %>
+    <li class="list-group-item">
+      <%= t :words %>
+    </li>
+  <% end %>
+</ul>

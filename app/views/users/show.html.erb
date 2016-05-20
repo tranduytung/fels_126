@@ -10,4 +10,13 @@
       <%= render "shared/stats" %>
     </section>
   </aside>
+  <div class="center col-md-8">
+    <h3><%= t :activities %></h3>
+    <% if @activity.any? %>
+      <table class="table table-hover">
+        <%= render @activity %>
+      </table>
+    <% end %>
+    <%= will_paginate @activity %>
+  </div>
 </div>

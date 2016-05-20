@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :destroy]
 
   def index
-    @users = User.paginate page: params[:page], per_page: 20
+    @users = User.paginate page: params[:page],
+      per_page: Settings.paginate.users
   end
 
   def new
@@ -12,6 +13,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @activity = Activity.all_activity(@user.id).
+      order(created_at: :desc).paginate page: params[:page],
+      per_page: Settings.paginate.activities if logged_in?
   end
 
   def create

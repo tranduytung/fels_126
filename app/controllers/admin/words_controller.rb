@@ -4,7 +4,8 @@ class Admin::WordsController < ApplicationController
   before_action :find_word, only: [:edit, :update, :destroy]
 
   def index
-    @words = Word.paginate page: params[:page], per_page: 20
+    @words = Word.paginate page: params[:page],
+      per_page: Settings.paginate.words
   end
 
   def new

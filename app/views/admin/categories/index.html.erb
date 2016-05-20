@@ -1,12 +1,25 @@
 <% provide :title, t(:all_categories) %>
-<h1><%= t :all_categories %></h1>
-<div class="center">
-  <%= link_to new_admin_category_path, class: "btn btn-info" do %>
-    <span><%= t :new_category %></span>
-  <% end %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= render "shared/user_info" %>
+    </section>
+    <hr>
+    <div>
+      <%= render "shared/admin_manager" if current_user.admin? %>
+    </div>
+  </aside>
+  <div class="col-md-8">
+    <h1><%= t :all_categories %></h1>
+    <div class="center">
+      <%= link_to new_admin_category_path, class: "btn btn-info" do %>
+        <span><%= t :new_category %></span>
+      <% end %>
+    </div>
+    <%= will_paginate %>
+      <ul class="categories">
+        <%= render @categories %>
+      </ul>
+    <%= will_paginate %>
+  </div>
 </div>
-<%= will_paginate %>
-  <ul class="categories">
-    <%= render @categories %>
-  </ul>
-<%= will_paginate %>
