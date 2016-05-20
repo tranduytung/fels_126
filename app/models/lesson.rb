@@ -7,6 +7,7 @@ class Lesson < ActiveRecord::Base
   scope :public_by, ->user_id{where user_id: user_id}
   validate :check_words_size
   before_create :create_words
+  before_update :create_activity_learned_lesson
 
   def point
     self.results.select{|result|
@@ -24,5 +25,10 @@ class Lesson < ActiveRecord::Base
     if @words.size < Settings.lesson.limit_words
       errors.add :base, I18n.t("message.not_enough_word")
     end
+  end
+
+  def create_activity_learned_lesson
+    Activity.create! action_type: :learned_lesson, user_id: self.user.id, 
+      object_id: self.id
   end
 end

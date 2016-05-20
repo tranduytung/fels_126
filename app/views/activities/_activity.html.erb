@@ -1,0 +1,23 @@
+<tr>
+  <td>
+    <%= activity.id %>
+  </td>
+  <td>
+    <%= render "shared/user_activity", activity: activity %>
+    <% if activity.follow? %>
+      <%= t "activity.follow" %>
+      <%= render "shared/object_activity", activity: activity %>
+    <% elsif activity.unfollow? %>
+      <%= t "activity.unfollow" %>
+      <%= render "shared/object_activity", activity: activity %>
+    <% elsif activity.learned_lesson? %>
+      <%= t "activity.learned_lesson" %>
+      <%= link_to find_lesson(activity.object_id).id,
+        find_lesson(activity.object_id) %>
+    <% end %>
+  </td>
+  <td>
+    <%= time_ago_in_words activity.created_at %>
+    <%= t :ago %>
+  </td>
+</tr>
