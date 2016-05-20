@@ -3,12 +3,17 @@
   <b><%= t :category %>:</b>
   <%= link_to @lesson.category.name, @lesson.category %>
 </p>
-
 <p>
   <b><%= t :total_word %>:</b>
   <%= @lesson.results.size %> <%= t :words %>
 </p>
-
+<p>
+  <b><%= t :point %>:</b>
+  <span>
+    <%= @lesson.point %>/
+    <%= @lesson.results.size %>
+  </span>
+</p>
 <%= form_for @lesson do |f| %>
   <%= f.hidden_field :learned, value: true %>
   <%= f.fields_for :results do |result| %>
