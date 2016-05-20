@@ -1,7 +1,6 @@
 source "https://rubygems.org"
 
 gem "rails", "4.2.6"
-gem "sqlite3"
 gem "sass-rails", "~> 5.0"
 gem "bootstrap-sass"
 gem "uglifier", ">= 1.3.0"
@@ -19,10 +18,13 @@ gem "config"
 
 group :development, :test do
   gem "byebug"
-end
-
-group :development do
+  gem "sqlite3"
   gem "web-console", "~> 2.0"
   gem "spring"
 end
 
+group :production do
+  gem "pg", "0.17.1"
+  gem "rails_12factor", "0.0.2"
+  gem "puma", "3.1.0"
+end
