@@ -84,6 +84,8 @@ en:
   stt: "STT"
   you: "You"
   ago: "ago"
+  learned_lesson_activities: "learned %{words_number} words in lesson"
+  number: "Number"
   
   picture_size: "should be less than 5MB"
 

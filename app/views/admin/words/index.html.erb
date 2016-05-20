@@ -1,8 +1,21 @@
 <%= provide :title, t(:all_words)%>
-<h1><%= t :all_words %></h1>
-<ul class="words">
-  <% if @words.any? %>
-    <%= render @words %>
-  <% end %>
-</ul>
-<%= will_paginate %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= render "shared/user_info" %>
+    </section>
+    <hr>
+    <div>
+      <%= render "shared/admin_manager" if current_user.admin? %>
+    </div>
+  </aside>
+  <div class="col-md-8">
+    <h1><%= t :all_words %></h1>
+    <ul class="words">
+      <% if @words.any? %>
+        <%= render @words %>
+      <% end %>
+    </ul>
+    <%= will_paginate %>
+  </div>
+</div>

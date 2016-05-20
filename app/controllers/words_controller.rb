@@ -9,6 +9,7 @@ class WordsController < ApplicationController
     else category = @categories.find_by id: params[:category_id]
       @words = category.words.send params[:type], current_user.id
     end
-    @words_display = @words.paginate page: params[:page], per_page: 10
+    @words_display = @words.paginate page: params[:page],
+      per_page: Settings.paginate.words
   end
 end

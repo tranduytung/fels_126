@@ -5,3 +5,13 @@ words:
     all_word: "all_word"
     learned: "learned"
     not_learned: "not_learned"
+paginate:
+  users: 10
+  words: 10
+  lesson: 10
+  categories: 10
+  activities: 5
+image_user:
+  size: 50
+  height: 50
+  width: 50

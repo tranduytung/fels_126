@@ -1,11 +1,11 @@
 <div class="row well">
-  <div class="col-md-5">
+  <div class="col-md-4">
     <%= word.content %>
   </div>
-  <div class="col-md-5">
+  <div class="col-md-4">
     <%= word.correct_answer.content %>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-4">
     <%= link_to edit_admin_word_path(word), class: "btn btn-info" do %>
       <span><%= t :edit %></span>
     <% end %>

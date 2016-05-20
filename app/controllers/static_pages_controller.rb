@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
     @activity = Activity.all_activity(current_user.id).
-      order created_at: :desc if logged_in?
+      order(created_at: :desc).paginate page: params[:page],
+      per_page: Settings.paginate.activities if logged_in?
   end
 
   def help
