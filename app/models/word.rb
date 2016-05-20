@@ -9,6 +9,11 @@ class Word < ActiveRecord::Base
   scope :learned, ->user_id{where "id IN (SELECT word_id FROM results
     WHERE lesson_id IN (SELECT id FROM lessons WHERE user_id = ?))", user_id}
   scope :all_word, ->user_id{}
+  scope :memoried, ->user_id{where "id IN (SELECT id FROM words
+    WHERE id IN (SELECT word_id FROM results
+    WHERE lesson_id IN (SELECT id FROM lessons WHERE user_id = #{user_id})
+    AND answer_id IN (SELECT id FROM answers WHERE is_correct = :true)))",
+    true: true}
   validates :content, presence: true, length: {maximum: 150}
 
   def correct_answer
