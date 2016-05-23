@@ -1,6 +1,7 @@
 var ready
 
 ready = function () {
+  make_radio_from_checkbox()
   $('body').on('DOMNodeInserted', function () {
     make_radio_from_checkbox()
   })

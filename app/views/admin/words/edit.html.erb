@@ -8,10 +8,15 @@
 
   <%= f.label :answers %>
   <%= f.fields_for :answers do |answer_form| %>
-    <%= render "answer_fields", f: answer_form %>
+    <% if answer_form.object._destroy == true %>
+      <div class="hide">
+    <% else %>
+      <div>
+    <% end %>
+        <%= render "answer_fields", f: answer_form %>
+      </div>
   <% end %>
   <p><%= link_to_add_fields t(:add_a_task), f, :answers %></p>
 
   <%= f.submit t(:update_word), class: "btn btn-primary" %>
-
 <% end %>
