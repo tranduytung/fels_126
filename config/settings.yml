@@ -15,3 +15,6 @@ image_user:
   size: 50
   height: 50
   width: 50
+answers:
+  limit_answers: 4
+  correct_answers: 1

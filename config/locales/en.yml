@@ -101,7 +101,7 @@ en:
     category_deleted: "Delete category successful"
     new_word_successful: "Create new word successful"
     should_have_a_correct_answer: "Should have a correct answer. Retry"
-    check_count_ansewer: "Should have 1 to 4 answer"
+    check_count_ansewer: "Should have 4 answer"
     update_word_successful: "Update Word successful"
     update_word_unsuccessful: "Update Word unsuccessful"
     delete_word_success: "Delete word successful"
