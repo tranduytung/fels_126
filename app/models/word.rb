@@ -25,7 +25,8 @@ class Word < ActiveRecord::Base
   end
 
   def check_answers_count
-    answers_count = self.answers.size
+    answers_count = self.answers.select{|answer|
+      answer._destroy == false}.size
     unless (answers_count == Settings.answers.limit_answers)
       errors.add :base, I18n.t("message.check_count_ansewer")
     end
