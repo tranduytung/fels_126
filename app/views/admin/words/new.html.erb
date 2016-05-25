@@ -1,5 +1,9 @@
 <% provide :title, t(:new_word) %>
 <h1><%= t :new_word %></h1>
+<h3>
+  <%= t :category %>:
+  <%= @category.name %>
+</h3>
 <%= form_for [:admin, @category, @word] do |f| %>
   <%= render "shared/error_messages" , object: f.object %>
 

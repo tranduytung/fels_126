@@ -10,6 +10,7 @@ class Admin::WordsController < ApplicationController
 
   def new
     @word = @category.words.build
+    @word.answers.build
   end
 
   def create
