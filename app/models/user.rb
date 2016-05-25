@@ -59,6 +59,12 @@ class User < ActiveRecord::Base
     following.include? other_user
   end
 
+  def delete_activity
+    Activity.where(object_id: self.id, action_type: [0,1]).each do |activity|
+      activity.destroy
+    end
+  end
+
   private
   def picture_size
     if picture.size > 5.megabytes
