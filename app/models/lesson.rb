@@ -14,6 +14,10 @@ class Lesson < ActiveRecord::Base
       result.answer.present? && result.answer.is_correct}.size
   end
 
+  def answered_numbers
+    self.results.select{|result| result.answer.present?}.size
+  end
+
   private
   def create_words
     self.words = self.category.words.not_learned(self.user).random
