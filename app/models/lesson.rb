@@ -8,6 +8,7 @@ class Lesson < ActiveRecord::Base
   validate :check_words_size
   before_create :create_words
   before_update :create_activity_learned_lesson
+  before_destroy :delete_activity
 
   def point
     self.results.select{|result|
@@ -34,5 +35,11 @@ class Lesson < ActiveRecord::Base
   def create_activity_learned_lesson
     Activity.create! action_type: :learned_lesson, user_id: self.user.id, 
       object_id: self.id
+  end
+
+  def delete_activity
+      Activity.where(object_id: self.id, action_type: 2).each do |activity|
+        activity.delete
+    end
   end
 end

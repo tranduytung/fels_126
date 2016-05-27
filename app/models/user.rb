@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
   
   before_save {self.email = email.downcase}
+  before_destroy :delete_activity
   
   mount_uploader :picture, PictureUploader
   
@@ -59,16 +60,16 @@ class User < ActiveRecord::Base
     following.include? other_user
   end
 
-  def delete_activity
-    Activity.where(object_id: self.id, action_type: [0,1]).each do |activity|
-      activity.destroy
-    end
-  end
-
   private
   def picture_size
     if picture.size > 5.megabytes
       errors.add :picture, t(:picture_size)
+    end
+  end
+
+  def delete_activity
+    Activity.where(object_id: self.id, action_type: [0,1]).each do |activity|
+      activity.delete
     end
   end
 end
