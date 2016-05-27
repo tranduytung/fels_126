@@ -8,15 +8,21 @@
   <%= @lesson.results.size %> <%= t :words %>
 </p>
 <p>
+  <b><%= t :answered %>:</b>
+  <span>
+    <%= @lesson.answered_numbers %>/
+    <%= @lesson.results.size %>
+  </span>
+</p>
+<p>
   <b><%= t :point %>:</b>
   <span>
-    <%= @lesson.point %>/
-    <%= @lesson.results.size %>
+    <%= @lesson.point %>
   </span>
 </p>
 <%= form_for @lesson do |f| %>
   <%= f.hidden_field :learned, value: true %>
-  <%= f.fields_for :results do |result| %>
+  <%= f.fields_for :results, @lesson.results.order_result do |result| %>
     <%= render "result_form", f: result %>
   <% end %>
 <% end %>

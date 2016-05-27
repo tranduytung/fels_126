@@ -19,7 +19,7 @@
           <% else %>
             <% if answer.is_correct? %>
               <span class="list-group-item-success">
-                <%= f.object.answer.content %>
+                <%= answer.content %>
               </span>
             <% elsif f.object.answer == answer %>
               <span class="list-group-item-danger">
