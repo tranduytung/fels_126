@@ -34,8 +34,11 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def destroy
-    @category.destroy
-    flash[:success] = t "message.category_deleted"
+    if @category.destroy
+      flash[:success] = t "message.category_deleted"
+    else
+      flash[:danger] = t "message.category_not_deleted"
+    end
     redirect_to admin_categories_path
   end
 
