@@ -7,11 +7,4 @@ class Category < ActiveRecord::Base
   validates :content, presence: true, length: {maximum: 1500},
     uniqueness: {case_sensitive: false}
 
-  def delete_activity
-    self.lessons.each do |lesson|
-      Activity.where(object_id: lesson.id, action_type: 2).each do |activity|
-        activity.delete
-      end
-    end
-  end
 end

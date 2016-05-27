@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
   
   before_save {self.email = email.downcase}
+  before_destroy :delete_activity
   
   mount_uploader :picture, PictureUploader
   

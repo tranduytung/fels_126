@@ -8,7 +8,6 @@ class Admin::UsersController < ApplicationController
 
   def destroy
     @user = User.find params[:id]
-    @user.delete_activity
     @user.destroy
     flash[:success] = t "message.user_deleted"
     redirect_to admin_users_path
