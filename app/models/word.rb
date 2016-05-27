@@ -1,6 +1,7 @@
 class Word < ActiveRecord::Base
   belongs_to :category
   has_many :answers, dependent: :destroy
+  has_many :results, dependent: :destroy
   accepts_nested_attributes_for :answers, allow_destroy: true
   validate :check_correct_answers
   scope :not_learned, ->user_id{where "id NOT IN (SELECT word_id FROM results
