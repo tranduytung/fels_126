@@ -38,11 +38,10 @@ class Admin::WordsController < ApplicationController
   def destroy
     if @word.destroy
       flash[:success] = t "message.delete_word_success"
-      redirect_to [:admin, :words]
     else
       flash[:danger] = t "message.delete_word_unsuccess"
-      redirect_to [:admin, :words]
     end
+    redirect_to [:admin, :words]
   end
 
   private
