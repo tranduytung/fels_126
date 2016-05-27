@@ -6,5 +6,4 @@ class Category < ActiveRecord::Base
     uniqueness: {case_sensitive: false}
   validates :content, presence: true, length: {maximum: 1500},
     uniqueness: {case_sensitive: false}
-
 end
