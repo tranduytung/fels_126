@@ -10,7 +10,7 @@ class Category < ActiveRecord::Base
   def delete_activity
     self.lessons.each do |lesson|
       Activity.where(object_id: lesson.id, action_type: 2).each do |activity|
-        activity.destroy
+        activity.delete
       end
     end
   end

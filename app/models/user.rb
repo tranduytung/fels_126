@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
 
   def delete_activity
     Activity.where(object_id: self.id, action_type: [0,1]).each do |activity|
-      activity.destroy
+      activity.delete
     end
   end
 
