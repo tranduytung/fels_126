@@ -1,0 +1,132 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+vi:
+  hello: "Xin chào"
+  base_title: "Project 1 - Framgia"
+  logo: "Project 1"
+  home: "Trang chủ"
+  help: "Giúp đỡ"
+  about: "Về Chúng tôi"
+  contact: "Liên hệ"
+  develop_by: "Phát triển bởi Tung"
+  wellcome: "Chào mừng tới Project 1"
+
+  form_error: "Form bao gồm "
+  sign_up: "Đăng kí"
+  log_in: "Đăng nhập"
+  log_out: "Đăng xuất"
+  user: "Người dùng"
+  profile: "Trang cá nhân"
+  edit_user: "Chỉnh sử thông tin"
+  account: "Tài khoản"
+  create_my_account: "Tạo tài khoản"
+  sign_up_now: "Đăng kí!!!"
+  remember_me: "Ghi nhớ đăng nhập"
+  update_your_profile: "Cập nhật thông tin"
+  save_change: "Lưu thay đổi"
+  all_user: "Tất cả người dùng"
+  view_my_profile: "Xem trang cá nhân của tôi"
+  following: "Đang theo dõi"
+  followers: "Người theo dõi"
+  follow: "Theo dõi"
+  unfollow: "Hủy theo dõi"
+  category: "Chủ đề"
+  all_categories: "Tất cả chủ đề"
+  start: "Bắt đầu"
+  see_more: "Xem thêm"
+  list_word: "Danh sách từ"
+  word: "Từ"
+  all_words: "Tất cả các từ"
+  manage_words: "Quản lí từ"
+  delete: "Xóa"
+  new_category: "Thêm chủ đề mới"
+  create_new_category: "Thêm chủ đề"
+  manage_categories: "Quản lí chủ đề"
+  edit_category: "Chỉnh sủa chủ đề"
+  update_category: "Cập nhật chủ đề"
+  edit: "Chỉnh sử"
+  all_users: "Tất cả người dùng"
+  manage_users: "Quản lí người dùng"
+  new_word: "Thêm từ mới"
+  create_new_word: "Tạo từ mới"
+  correct: "Chính xác"
+  add_a_task: "Thêm đáp án"
+  remove_answer: "Bỏ đáp án"
+  edit_word: "Chỉnh sủa từ"
+  update_word: "Cập nhật từ"
+  start_lesson: "Bắt đầu bài học"
+  list_lesson: "Danh sách bài học"
+  category_has_not_lessons: "Chủ đề không có bài học nào"
+  submit: "Hoàn thành"
+  filter: "Lọc"
+  all: "Tất cả"
+  total_word: "Tổng số từ: "
+  action_content: "hành động"
+  stt: "STT"
+  you: "Bạn"
+  ago: "trước"
+  learned_lesson_activities: "đã học %{words_number} từ ở bài học"
+  number: "Số"
+  answered: "Đã trả lời"
+  
+  picture_size: "Nên dưới 5MB"
+  activities: "Thông báo"
+
+  message:
+    wellcome_to: "Chào mừng tới project 1"
+    please_log_in: "Vui lòng đăng nhập."
+    invalid_email_password: "Email hoặc pasword không đúng"
+    update_profile: "Cập nhật thông tin cá nhân"
+    user_deleted: "Xóa người dùng thành công"
+    new_category_successful: "Thêm chủ đề thành công"
+    you_are_not_admin: "Bạn không phải là admin"
+    update_category_successful: "Cập nhật chủ đề thành công"
+    category_deleted: "Xóa chủ đề thành công"
+    new_word_successful: "Thêm từ thành công"
+    should_have_a_correct_answer: "Nên có 1 đáp án đúng. Thử lại"
+    check_count_ansewer: "Nên có ít nhất 1 đáp án"
+    update_word_successful: "Cập nhật từ thành công"
+    update_word_unsuccessful: "Cập nhật từ thất bại"
+    delete_word_success: "Xóa từ thành công"
+    new_lesson_successful: "Tạo bài học thành công"
+    new_lesson_unsuccessful: "Tạo bài học thất bại"
+    error_no_word: "Lỗi. Chủ đề không có từ nào"
+    error: "Lỗi"
+    please_log_in_to_see_it: "Vui lòng đăng nhập để xem nhiều hơn"
+    not_enough_word: "Chủ đề không đủ từ"
+    lesson_not_learned: "Bạn chưa có bài học nào"
+    update_lesson_successful: "Cập nhật bài học thành công"
+    you_can_see_it: "Bạn có thể xem nó"
+    category_not_deleted: "Xóa chủ đề thất bại"
+    user_not_deleted: "Xóa người dùng thất bại"
+
+  warning:
+    delete: "Bạn có muốn xóa ?"
+  activity:
+    follow: "đã theo dõi"
+    unfollow: "đã hủy theo dõi"
+    learned_lesson: "đã học bài"
+  datetime:
+      distance_in_words:
+        about_x_hours: "khoảng %{count} giờ"
+        less_than_x_minutes: "dưới %{count} phút"
+        x_minutes: "%{count} phút"
