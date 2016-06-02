@@ -3,6 +3,7 @@ class LessonsController < ApplicationController
   before_action :find_lesson, only: [:show, :update, :check_user]
   before_action :find_category, only: [:create]
   before_action :check_user, only: [:show, :update]
+  # load_and_authorize_resource param_method: :lesson_params
 
   def show
   end

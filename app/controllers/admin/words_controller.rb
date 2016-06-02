@@ -1,7 +1,10 @@
 class Admin::WordsController < ApplicationController
-  before_action :require_admin
+  # before_action :require_admin
   before_action :find_category, only: [:new, :create]
-  before_action :find_word, only: [:edit, :update, :destroy]
+  # before_action :find_word, only: [:edit, :update, :destroy]
+  load_and_authorize_resource param_method: :word_params
+  load_and_authorize_resource create: "category_params.words"
+  # load_and_authorize_resource new: "category_params.words"
 
   def index
     @words = Word.paginate page: params[:page],
@@ -55,7 +58,7 @@ class Admin::WordsController < ApplicationController
     @category = Category.find params[:category_id]
   end
 
-  def find_word
-    @word = Word.find params[:id]
-  end
+  # def find_word
+  #   @word = Word.find params[:id]
+  # end
 end

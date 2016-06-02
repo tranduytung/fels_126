@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
-  before_action :require_admin
+  # before_action :require_admin
+  load_and_authorize_resource
 
   def index
     @users = User.paginate page: params[:page],
@@ -7,7 +8,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find params[:id]
+    # @user = User.find params[:id]
     if @user.destroy
       flash[:success] = t "message.user_deleted"
     else

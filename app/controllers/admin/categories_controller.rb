@@ -1,18 +1,20 @@
 class Admin::CategoriesController < ApplicationController
-  before_action :require_admin
-  before_action :find_caregory, only: [:edit, :update, :destroy]
+  # before_action :require_admin
+  # before_action :find_caregory, only: [:edit, :update, :destroy]
+  load_and_authorize_resource param_method: :category_params
 
   def index
     @categories = Category.paginate page: params[:page],
       per_page: Settings.paginate.categories
+    # authorize! :read, @categories
   end
 
   def new
-    @category = Category.new
+    # @category = Category.new
   end
 
   def create
-    @category = Category.new category_params
+    # @category = Category.new category_params
     if @category.save
       flash[:success] = t "message.new_category_successful"
       redirect_to @category
@@ -43,13 +45,12 @@ class Admin::CategoriesController < ApplicationController
   end
 
   private
-
   def category_params
     params.require(:category).permit :name, :content
   end
 
-  def find_caregory
-    @category = Category.find params[:id]
-  end
+  # def find_caregory
+  #   @category = Category.find params[:id]
+  # end
 
 end
