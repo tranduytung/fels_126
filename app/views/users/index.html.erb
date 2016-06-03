@@ -1,7 +1,19 @@
 <% provide :title, t(:all_user) %>
 <h1><%= t :all_user %></h1>
-<%= will_paginate %>
+<%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :name_cont, "Name contains" %>
+    <%= f.text_field :name_cont %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+<tr>
+  <th><%= sort_link(@search, :name, "Name") %></th>
+  <th><%= sort_link(@search, :email, "Email") %></th>
+  <th><%= sort_link(@search, :created_at, "Day") %></th>
+</tr>
+<%= will_paginate @users %>
 <ul class="users">
   <%= render @users %>
 </ul>
-<%= will_paginate %>
+<%= will_paginate @users %>
